@@ -1,0 +1,15 @@
+&spi1 {
+    status = "okay";
+    compatible = "nordic,nrf-spi";
+    sck-pin = <12>;
+    mosi-pin = <13>;
+    miso-pin = <14>;
+
+    nice_view_spi: nice_view@0 {
+        compatible = "ssd1306";
+        reg = <0>;
+        spi-max-frequency = <8000000>;
+        cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+        label = "NICE_VIEW";
+    };
+};
